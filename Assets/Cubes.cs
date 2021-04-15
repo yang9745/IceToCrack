@@ -14,9 +14,10 @@ using UnityEngine;
 public class Cubes : MonoBehaviour
 {
     public bool b = false;
+    Vector3 pos = Vector3.zero;
     void Start()
     {
-        
+        pos = transform.position;
     }
     float _time=0;
     // Update is called once per frame
@@ -24,13 +25,17 @@ public class Cubes : MonoBehaviour
     {
         if(b==true)
         {
-            _time += Time.deltaTime;
+            _time += Time.deltaTime/5;
             if(_time>=1)
             {
                 _time = 0;
                 b = false;
             }
             transform.position += new Vector3(0, -10, 0)*Time.deltaTime;
+        }
+        else
+        {
+            transform.position = pos;
         }
     }
 }
