@@ -7,11 +7,13 @@
 		_D("D",Range(0,5)) = 1
 	    _U("U",Range(0,1))=0
 		_V("V",Range(0,1))=0
+			_C("C",Range(0,2)) = 0
     }
     SubShader
     {
 		
         Tags { "RenderType"="Opaque" "Queue"="Transparent"}
+		  //Tags { "RenderType" = "Opaque" }
         LOD 100
         GrabPass{}
         Pass
@@ -45,6 +47,8 @@
 			float _D;
 			float _U;
 			float _V;
+			float _C;
+
 
             v2f vert (appdata v)
             {
@@ -68,7 +72,7 @@
 
                 // apply fog
                 //UNITY_APPLY_FOG(i.fogCoord, col);
-                return col* grabColor;
+                return col* grabColor*_C;
             }
             ENDCG
         }
