@@ -62,7 +62,9 @@
   <ItemGroup>
     <Compile Include="Assets\Cubes.cs" />
     <Compile Include="Assets\T.cs" />
+    <None Include="Assets\Shader\Fresnel.shader" />
     <None Include="Assets\Shader\B1.shader" />
+    <None Include="Assets\Scenes\ZZZ.shader" />
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>E:/IceToCrack/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
     </Reference>

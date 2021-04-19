@@ -69,7 +69,7 @@
 			float3 normal = UnpackNormal(tex2D(_Normal, i.uv));
 				i.grabPos.xy += normal.rg*_D;
 			   fixed4 grabColor = tex2Dproj(_GrabTexture, i.grabPos);
-
+			   grabColor.a = 0.5;
                 // apply fog
                 //UNITY_APPLY_FOG(i.fogCoord, col);
                 return col* grabColor*_C;
